@@ -10,7 +10,6 @@ import './Header.css'
 function Header() {
 
 const [{basket}] = useStateVal()
-console.log(basket)
 
     return (
         <nav className='header' >
