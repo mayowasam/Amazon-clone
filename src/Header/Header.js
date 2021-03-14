@@ -4,12 +4,16 @@ import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import {useStateVal} from '../StateProvider'
 import './Header.css'
+import {auth} from '../firebase/Firebase'
 
 
 
 function Header() {
 
-const [{basket}] = useStateVal()
+const [{basket,user}] = useStateVal()
+const ToggleLogin = () =>{
+    auth.signOut();
+}
 
     return (
         <nav className='header' >
@@ -34,10 +38,10 @@ const [{basket}] = useStateVal()
             {/* 3 links */}
 
             <div className="header__Nav">
-                <Link to="/login" className="header__link" >
-                    <div className="header__options">
-                        <span className="header__optionlineOne">Hello Mayowa</span><br />
-                        <span className="header__optionlineTwo">Sign in</span>
+                <Link to={!user && "/login"} className="header__link" >
+                    <div className="header__options" onClick={ToggleLogin}>
+                        <span className="header__optionlineOne">Hello {user?.email}</span><br />
+                        <span className="header__optionlineTwo">{user ? 'Signout': 'Signin'}</span>
                     </div>
                 </Link>
 
