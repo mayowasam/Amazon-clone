@@ -5,6 +5,7 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import {useStateVal} from '../StateProvider'
 import './Header.css'
 import {auth} from '../firebase/Firebase'
+import AmazonLogo from '../images/amazon logo.png'
 
 
 
@@ -21,7 +22,7 @@ const ToggleLogin = () =>{
             {/* amazon image */}
             <Link to='/'>
                 <img className="header__logo"
-                    src={require('../images/amazon logo.png')}
+                    src={AmazonLogo}
                     alt='amazon logo'
                 />
             </Link>

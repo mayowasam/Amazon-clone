@@ -7,7 +7,6 @@ import Checkout from './Checkout/Checkout';
 import Login from './firebase/Login';
 import { useStateVal } from './StateProvider';
 import {auth} from './firebase/Firebase'
-import { Unsubscribe } from '@material-ui/icons';
 
 function App() {
 
@@ -15,7 +14,7 @@ function App() {
   console.log(user)
 
   useEffect(()=>{
-    const unsubsribe = auth.onAuthStateChanged((authState)=>{
+    const unsubscribe = auth.onAuthStateChanged((authState)=>{
       if(authState){
         setBasket({
           type:'SET_USER',
@@ -32,7 +31,7 @@ function App() {
       }
     })
 
-    return () => Unsubscribe()
+    return () => unsubscribe()
 
   },[])
 

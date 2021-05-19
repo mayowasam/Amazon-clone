@@ -20,7 +20,7 @@ function CheckoutProduct(props){
     return (
 
         <div className="checkoutProduct" key={props.id}>
-            {/* <img classname="checkoutProduct__image" src={require(`${props.image}`) } alt ='Checkout Product'/> */}
+            <img classname="checkoutProduct__image" src={props.image} alt ='Checkout Product'/>
 
 
             <div className="checkoutProduct__info">
@@ -39,6 +39,9 @@ function CheckoutProduct(props){
                         ))
                     }
                 </div>
+
+        
+
                 <button onClick={removeFromBasket}>Remove from Basket</button>
 
             </div>

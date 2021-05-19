@@ -45,7 +45,7 @@ const addToBasket = () =>{
 
 
 
-            <img src={require(`${props.image}`)} alt="product" />
+            <img src={props.image} alt="product" />
             <button onClick={addToBasket}>Add to basket</button>
 
 

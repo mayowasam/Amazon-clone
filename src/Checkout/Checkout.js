@@ -2,6 +2,7 @@ import React from 'react'
 import { useStateVal } from '../StateProvider'
 import CheckoutProduct from './CheckoutProduct'
 import Subtotal from './Subtotal/Subtotal'
+import SlidePic from '../images/slide/slide 4.jpg'
 import './Checkout.css'
 
 function Checkout() {
@@ -11,7 +12,7 @@ function Checkout() {
     return (
         <div className="checkout">
             <div className="checkout__left">
-                <img className="checkout__ad" src={require("../images/slide/slide 4.jpg")} />
+                <img className="checkout__ad" src={SlidePic} />
 
                 {
                     (basket.length === 0) ?
